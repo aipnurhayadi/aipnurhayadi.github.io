@@ -3,7 +3,7 @@
     <div>
       <Logo />
       <h1 class="title">
-        aipnur.github.io
+        aipnurhayadi.github.io
       </h1>
       <div class="links">
         <a
