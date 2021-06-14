@@ -1,27 +1,41 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        aipnurhayadi.github.io
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div class="h-screen flex bg-gray-200">
+    <div class="flex flex-wrap justify-items-center max-w-md m-auto px-8">
+      <div class="text-gray-700 text-center">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in nisl
+        pulvinar, pharetra lorem sed, aliquet justo. Cras nec vulputate risus,
+        at lobortis sapien.
+      </div>
+
+      <div
+        class="
+          flex
+          justify-items-center
+          mx-auto
+          mt-6
+          text-gray-700
+          social
+          font-bold
+        "
+      >
+        <div class="flex items-center mr-4">
+          <github-icon class="mr-2" />
+          <a
+            href="https://github.com/aipnurhayadi"
+            target="_blank"
+            class="hover:underline"
+            >aipnurhayadi</a
+          >
+        </div>
+        <div class="flex items-center">
+          <instagram-icon class="mr-2" />
+          <a
+            href="https://instagram.com/aipnurhayadi"
+            target="_blank"
+            class="hover:underline"
+            >aipnurhayadi</a
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -32,47 +46,12 @@ export default {}
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+  font-family: 'Open Sans', sans-serif;
 }
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.social {
+  font-family: 'Roboto', sans-serif;
 }
 </style>
