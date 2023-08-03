@@ -14,10 +14,9 @@ function Home() {
                 Halo, Rhhha disini!
               </h4>
               <h5 className="h5 text-primary">
-                Kami merupakan perusahaan pengembang perangkat lunak yang
-                berbasis di Bandung. Semua proyek kami di sini telah
-                dilisensikan di bawah MIT, Anda berhak menggunakan mereka sesuai
-                keinginan Anda.
+                Kami adalah programmer dari kota bandung, dengan fokus utama
+                pada pengembangan perangkat lunak khususnya menggunakan bahasa
+                pemrograman php.
               </h5>
               <Button
                 color="outline-secondary"
