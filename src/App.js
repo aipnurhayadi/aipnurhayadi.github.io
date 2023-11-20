@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Project from "./pages/Project";
 import Update from "./pages/Update";
 import PageNotFound from "./pages/errors/PageNotFound";
+import Redirect from "./pages/Redirect";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route exact path="/" Component={Home} />
           <Route path="/project" Component={Project} />
           <Route path="/update" Component={Update} />
+          <Route path="/redirect/:urlId" Component={Redirect} />
           <Route path="*" Component={PageNotFound} />
         </Routes>
       </HashRouter>

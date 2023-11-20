@@ -9,22 +9,7 @@ function Home() {
           style={{ height: "calc(100vh - 5rem)" }}
         >
           <Col sm={12} md={7} className="mx-auto">
-            <div className="text-center my-5">
-              <h4 className="ff-serif display-5 mx-auto mb-4 text-primary fw-bold">
-                Halo, Rhhha disini!
-              </h4>
-              <h5 className="h5 text-primary">
-                Kami adalah programmer dari kota bandung, dengan fokus utama
-                pada pengembangan perangkat lunak khususnya menggunakan bahasa
-                pemrograman php.
-              </h5>
-              <Button
-                color="outline-secondary"
-                className="mt-5 rounded-pill px-5 py-2"
-              >
-                Lihat semua
-              </Button>
-            </div>
+            <div className="text-center my-5">Sedang dalam perbaikan</div>
           </Col>
         </Row>
       </Container>
@@ -33,3 +18,4 @@ function Home() {
 }
 
 export default Home;
+
