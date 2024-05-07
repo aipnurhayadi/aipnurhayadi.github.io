@@ -1,13 +1,21 @@
 "use client";
 import { Button, Modal, ModalBody, ModalHeader } from "flowbite-react";
 import { ReactElement, useState } from "react";
+import { HiOutlinePhone } from "react-icons/hi";
 
 export default function Contact(): ReactElement {
   const [openModal, setOpenModal] = useState(false);
 
   return (
     <div>
-      <Button onClick={() => setOpenModal(!openModal)}>Hubungi Saya</Button>
+      <Button
+        pill
+        onClick={() => setOpenModal(!openModal)}
+        className="flex items-center"
+      >
+        <HiOutlinePhone className="w-5 h-5" />
+        <span className="ms-0 md:ms-2 hidden md:block">Hubungi Saya</span>
+      </Button>
       <Modal show={openModal} onClose={() => setOpenModal(false)}>
         <ModalHeader>Hubungi Saya</ModalHeader>
         <ModalBody>

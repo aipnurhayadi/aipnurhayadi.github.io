@@ -43,22 +43,22 @@ export default function RootLayout({
           "dark:text-gray-400": true,
         })}
       >
-        <Navbar border>
+        <Navbar border rounded>
           <NavbarBrand as={Link} href="/">
             <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
               aipnur.dev
             </span>
           </NavbarBrand>
+          <div className="flex justify-between order-0 md:order-1">
+            <DarkThemeToggle />
+            <Contact />
+          </div>
           <NavbarToggle />
           <NavbarCollapse>
             <NavbarLink to="/" label="Beranda" />
             <NavbarLink to="/project" label="Proyek" />
             <NavbarLink to="/timeline" label="Lini Masa" />
           </NavbarCollapse>
-          <div className="flex justify-between w-full md:w-auto mt-2 md:mt-0">
-            <DarkThemeToggle className="me-2" />
-            <Contact />
-          </div>
         </Navbar>
         <div className="py-4">{children}</div>
       </body>
