@@ -14,6 +14,7 @@ import {
 import Link from "next/link";
 import NavbarLink from "@/components/common/NavbarLink";
 import Contact from "@/components/form/Contact";
+import { ReactElement } from "react";
 
 const firacode = Fira_Code({ subsets: ["latin"] });
 
@@ -26,7 +27,7 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>): ReactElement {
   return (
     <html lang="en">
       <head>

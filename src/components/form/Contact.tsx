@@ -1,8 +1,8 @@
 "use client";
 import { Button, Modal, ModalBody, ModalHeader } from "flowbite-react";
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 
-export default function Contact() {
+export default function Contact(): ReactElement {
   const [openModal, setOpenModal] = useState(false);
 
   return (
