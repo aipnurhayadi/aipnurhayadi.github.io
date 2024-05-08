@@ -5,7 +5,7 @@ import { ReactElement } from "react";
 
 export interface NavbarLinkProps {
   to: string;
-  label: string;
+  text: string;
 }
 
 export default function NavbarLink(props: NavbarLinkProps): ReactElement {
@@ -13,7 +13,7 @@ export default function NavbarLink(props: NavbarLinkProps): ReactElement {
 
   return (
     <NavbarLinkFb href={props.to} active={pathname === props.to}>
-      {props.label}
+      {props.text}
     </NavbarLinkFb>
   );
 }

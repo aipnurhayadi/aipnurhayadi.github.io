@@ -9,7 +9,6 @@ export default function Contact(): ReactElement {
   return (
     <div>
       <Button
-        pill
         onClick={() => setOpenModal(!openModal)}
         className="flex items-center"
       >
