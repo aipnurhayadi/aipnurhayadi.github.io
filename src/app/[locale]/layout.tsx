@@ -20,7 +20,7 @@ import { useTranslations } from "next-intl";
 const firacode = Fira_Code({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "aipnur.dev",
+  title: "aipnur",
   description: "Selamat datang di situs web kami",
 };
 
@@ -55,7 +55,7 @@ export default function RootLayout({
           <NavbarToggle />
           <NavbarBrand as={Link} href="/">
             <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-              aipnur.dev
+              aipnur
             </span>
           </NavbarBrand>
           <div className="flex md:order-2">
