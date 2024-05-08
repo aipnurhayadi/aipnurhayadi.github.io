@@ -5,4 +5,8 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {};
 
-module.exports = withNextIntl(nextConfig);
+try {
+  module.exports = withNextIntl(nextConfig);
+} catch (error) {
+  console.error("An error occurred:", error);
+}
