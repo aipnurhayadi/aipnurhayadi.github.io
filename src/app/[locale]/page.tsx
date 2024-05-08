@@ -2,6 +2,10 @@
 import { ReactElement } from "react";
 import { useTranslation } from "react-i18next";
 
+export async function generateStaticParams() {
+  return {};
+}
+
 export default function Home(): ReactElement {
   const { t } = useTranslation();
   return (
