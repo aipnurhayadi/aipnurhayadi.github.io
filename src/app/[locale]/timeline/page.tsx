@@ -1,11 +1,13 @@
-import { useTranslations } from "next-intl";
+"use client";
 import { ReactElement } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Timeline(): ReactElement {
-  const t = useTranslations();
+  const { t } = useTranslation();
+
   return (
     <div className="text-center">
-      {t("misc.under_development", { page: t("common.timeline") })}
+      {t("under_development", { page: t("timeline") })}
     </div>
   );
 }

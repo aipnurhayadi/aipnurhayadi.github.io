@@ -1,10 +1,11 @@
-import createMiddleware from "next-intl/middleware";
+import { i18nRouter } from "next-i18n-router";
+import i18nConfig from "./i18nConfig";
+import { NextRequest } from "next/server";
 
-export default createMiddleware({
-  locales: ["id", "en"],
-  defaultLocale: "id",
-});
+export function middleware(request: NextRequest) {
+  return i18nRouter(request, i18nConfig);
+}
 
 export const config = {
-  matcher: ["/", "/(id|en)/:path*", "/((?!_next|_vercel|.*\\..*).*)"],
+  matcher: "/((?!api|static|.*\\..*|_next).*)",
 };

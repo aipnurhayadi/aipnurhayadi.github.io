@@ -15,11 +15,8 @@ import Link from "next/link";
 import NavbarLink from "@/components/common/NavbarLink";
 import { ReactElement, ReactNode } from "react";
 import LocaleSwitcher from "@/components/common/LocaleSwitcher";
-import {
-  NextIntlClientProvider,
-  useMessages,
-  useTranslations,
-} from "next-intl";
+import { initTranslations } from "@/i18n";
+import TranslationsProvider from "@/components/common/TranslationsProvider";
 
 const firacode = Fira_Code({ subsets: ["latin"] });
 
@@ -35,12 +32,15 @@ interface RootLayoutProps {
   };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params: { locale },
-}: Readonly<RootLayoutProps>): ReactElement {
-  const t = useTranslations("common");
-  const messages = useMessages();
+}: Readonly<RootLayoutProps>): Promise<ReactElement> {
+  const i18nNamespaces = ["common", "misc"];
+  const { t, resources } = await initTranslations({
+    locale,
+    namespaces: i18nNamespaces,
+  });
 
   return (
     <html lang={locale}>
@@ -57,7 +57,11 @@ export default function RootLayout({
           "dark:text-gray-400": true,
         })}
       >
-        <NextIntlClientProvider messages={messages}>
+        <TranslationsProvider
+          namespaces={i18nNamespaces}
+          locale={locale}
+          resources={resources}
+        >
           <Navbar border rounded>
             <NavbarToggle />
             <NavbarBrand as={Link} href="/">
@@ -77,7 +81,7 @@ export default function RootLayout({
             </NavbarCollapse>
           </Navbar>
           <div className="py-4">{children}</div>
-        </NextIntlClientProvider>
+        </TranslationsProvider>
       </body>
     </html>
   );

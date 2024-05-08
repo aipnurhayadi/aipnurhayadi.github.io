@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 import { NavbarLink as NavbarLinkFb } from "flowbite-react";
 import { ReactElement } from "react";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useTranslation } from "react-i18next";
 
 export interface NavbarLinkProps {
   to: string;
@@ -12,16 +12,17 @@ export interface NavbarLinkProps {
 
 export default function NavbarLink(props: NavbarLinkProps): ReactElement {
   const pathname = usePathname();
-  const localeActive = useLocale();
+  const { i18n } = useTranslation();
+  const currentLocale = i18n.language;
 
-  const destination =
-    props.to == "/" ? `/${localeActive}` : `/${localeActive}${props.to}`;
+  const newPathname =
+    props.to == "/" ? `/${currentLocale}` : `/${currentLocale}${props.to}`;
 
   return (
     <NavbarLinkFb
-      href={destination}
+      href={newPathname}
       as={Link}
-      active={pathname === destination}
+      active={pathname === newPathname}
     >
       {props.text}
     </NavbarLinkFb>

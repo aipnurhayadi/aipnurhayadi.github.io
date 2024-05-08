@@ -1,11 +1,12 @@
 "use client";
 
 import { Button, Dropdown, DropdownItem } from "flowbite-react";
-import { useLocale } from "next-intl";
-import { useRouter } from "next/navigation";
-import { ReactElement, useTransition } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { ReactElement } from "react";
 import { HiTranslate } from "react-icons/hi";
 import { US, ID } from "country-flag-icons/react/3x2";
+import { useTranslation } from "react-i18next";
+import i18nConfig from "@/i18nConfig";
 
 interface LocaleDropdownItemProps {
   locale: string;
@@ -16,20 +17,35 @@ interface LocaleDropdownItemProps {
 export function LocaleDropdownItem(
   props: LocaleDropdownItemProps
 ): ReactElement {
-  const [isPending, startTransition] = useTransition();
+  const { i18n } = useTranslation();
+  const currentLocale = i18n.language;
   const router = useRouter();
-  const localeActive = useLocale();
+  const currentPathname = usePathname();
 
-  const handleClick = (nextLocale: string) => {
-    startTransition(() => router.push(`/${nextLocale}`));
+  const handleClick = () => {
+    const newLocale = props.locale;
+
+    const days = 30;
+    const date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    const expires = date.toUTCString();
+    document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
+
+    if (currentLocale === i18nConfig.defaultLocale) {
+      router.push("/" + newLocale + currentPathname);
+    } else {
+      router.push(
+        currentPathname.replace(`/${currentLocale}`, `/${newLocale}`)
+      );
+    }
+
+    router.refresh();
   };
 
-  console.log(props.icon);
-
   return (
-    <DropdownItem onClick={() => handleClick(props.locale)}>
+    <DropdownItem onClick={() => handleClick()}>
       <span className="me-3">
-        {localeActive === props.locale ? <>&bull;</> : <>&nbsp;</>}
+        {currentLocale === props.locale ? <>&bull;</> : <>&nbsp;</>}
       </span>
       {props.icon}
       {props.text}
@@ -54,7 +70,7 @@ export default function LocaleSwitcher(): ReactElement {
         text="Bahasa Indonesia"
       />
       <LocaleDropdownItem
-        locale="en"
+        locale="en-US"
         icon={<US className="h-5 me-3" />}
         text="English"
       />
