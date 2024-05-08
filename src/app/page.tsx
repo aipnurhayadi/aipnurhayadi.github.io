@@ -1,5 +1,5 @@
-import { ReactElement } from "react";
+import { redirect } from "next/navigation";
 
-export default function Home(): ReactElement {
-  return <div className="text-center">Halaman sedang dalam pembangunan</div>;
+export default function RootPage() {
+  redirect("/id");
 }

@@ -1,0 +1,10 @@
+{
+  "common": {
+    "home": "Home",
+    "project": "Project",
+    "timeline": "Timeline"
+  },
+  "misc": {
+    "under_development": "{page} under development"
+  }
+}

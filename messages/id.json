@@ -1,0 +1,10 @@
+{
+  "common": {
+    "home": "Beranda",
+    "project": "Proyek",
+    "timeline": "Lini Masa"
+  },
+  "misc": {
+    "under_development": "{page} sedang dalam pengembangan"
+  }
+}
