@@ -15,7 +15,11 @@ import Link from "next/link";
 import NavbarLink from "@/components/common/NavbarLink";
 import { ReactElement, ReactNode } from "react";
 import LocaleSwitcher from "@/components/common/LocaleSwitcher";
-import { useTranslations } from "next-intl";
+import {
+  NextIntlClientProvider,
+  useMessages,
+  useTranslations,
+} from "next-intl";
 
 const firacode = Fira_Code({ subsets: ["latin"] });
 
@@ -36,6 +40,8 @@ export default function RootLayout({
   params: { locale },
 }: Readonly<RootLayoutProps>): ReactElement {
   const t = useTranslations("common");
+  const messages = useMessages();
+
   return (
     <html lang={locale}>
       <head>
@@ -51,25 +57,27 @@ export default function RootLayout({
           "dark:text-gray-400": true,
         })}
       >
-        <Navbar border rounded>
-          <NavbarToggle />
-          <NavbarBrand as={Link} href="/">
-            <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-              aipnur
-            </span>
-          </NavbarBrand>
-          <div className="flex md:order-2">
-            <DarkThemeToggle className="me-2" />
-            <LocaleSwitcher />
-          </div>
+        <NextIntlClientProvider messages={messages}>
+          <Navbar border rounded>
+            <NavbarToggle />
+            <NavbarBrand as={Link} href="/">
+              <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+                aipnur
+              </span>
+            </NavbarBrand>
+            <div className="flex md:order-2">
+              <DarkThemeToggle className="me-2" />
+              <LocaleSwitcher />
+            </div>
 
-          <NavbarCollapse>
-            <NavbarLink to="/" text={t("home")} />
-            <NavbarLink to="/project" text={t("project")} />
-            <NavbarLink to="/timeline" text={t("timeline")} />
-          </NavbarCollapse>
-        </Navbar>
-        <div className="py-4">{children}</div>
+            <NavbarCollapse>
+              <NavbarLink to="/" text={t("home")} />
+              <NavbarLink to="/project" text={t("project")} />
+              <NavbarLink to="/timeline" text={t("timeline")} />
+            </NavbarCollapse>
+          </Navbar>
+          <div className="py-4">{children}</div>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
