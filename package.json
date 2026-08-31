@@ -1,0 +1,12 @@
+{
+  "name": "aipnurhayadi.github.io",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.1",
+    "tailwindcss": "^4.2.1",
+    "tw-animate-css": "^1.3.4"
+  }
+}

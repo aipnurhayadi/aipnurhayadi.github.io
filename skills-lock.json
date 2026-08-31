@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "git-workflow-and-versioning": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/git-workflow-and-versioning/SKILL.md",
+      "computedHash": "acdc333418db7f2390978415e00d151092ed19a0b6475e2b00c5b8f79d149dfc"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+socialLinks:
+  - name: "GitHub"
+    href: "https://github.com/username"
+  - name: "LinkedIn"
+    href: "https://linkedin.com/in/username"
+  - name: "Twitter"
+    href: "https://twitter.com/username"
+
+focusAreas:
+  - title: "Desain"
+    description: "Membuat antarmuka yang bersih, fungsional, dan menyenangkan digunakan."
+  - title: "Pengembangan"
+    description: "Membangun produk digital dengan perhatian pada performa dan detail."
+  - title: "Tulisan"
+    description: "Berbagi pemikiran, proses, dan pelajaran dari setiap proyek."
+
+selectedWork:
+  - title: "Proyek Pertama"
+    category: "Website"
+    year: "2025"
+    href: "#"
+  - title: "Proyek Kedua"
+    category: "Aplikasi"
+    year: "2024"
+    href: "#"
+  - title: "Proyek Ketiga"
+    category: "Identitas Visual"
+    year: "2024"
+    href: "#"

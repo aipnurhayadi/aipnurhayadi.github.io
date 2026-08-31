@@ -1,0 +1,102 @@
+---
+layout: default
+---
+
+<main class="min-h-screen bg-background text-foreground">
+  <div class="mx-auto max-w-2xl px-6 py-24 sm:px-8 sm:py-32">
+    <!-- Hero -->
+    <section class="fade-in-section space-y-6">
+      <p class="text-sm font-medium tracking-wide text-muted-foreground uppercase">
+        Halo, saya
+      </p>
+      <h1 class="font-display text-4xl font-medium tracking-tight sm:text-5xl">
+        Aip Nurhayadi
+      </h1>
+      <p class="text-lg leading-relaxed text-muted-foreground sm:text-xl">
+        Saya mengembangkan produk digital yang mengutamakan kejelasan, fungsionalitas, dan pengalaman pengguna yang efisien.
+      </p>
+    </section>
+
+    <!-- About -->
+    <section class="fade-in-section mt-24 space-y-4" data-delay="100">
+      <h2 class="font-display text-sm font-medium tracking-wide text-muted-foreground uppercase">
+        Tentang
+      </h2>
+      <p class="leading-relaxed text-foreground">
+        Saya menikmati proses mengubah masalah rumit menjadi pengalaman digital yang ringan. Saat ini saya sedang membangung karya-karya pribadi, bereksperimen dengan teknologi web modern, dan terus belajar cara menyampaikan ide dengan lebih baik.
+      </p>
+      <p class="leading-relaxed text-foreground">
+        Website ini adalah ruang saya untuk berbagi perjalanan, proyek, dan pemikiran. Kontennya akan terus berkembang seiring waktu.
+      </p>
+    </section>
+
+    <!-- Focus Areas -->
+    <section class="fade-in-section mt-24 space-y-8" data-delay="100">
+      <h2 class="font-display text-sm font-medium tracking-wide text-muted-foreground uppercase">
+        Fokus
+      </h2>
+      <div class="grid gap-4 sm:grid-cols-3">
+        {% for area in site.data.content.focusAreas %}
+        <div class="rounded-lg border border-border bg-card p-5 transition-colors hover:bg-secondary">
+          <h3 class="font-display font-medium">{{ area.title }}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+            {{ area.description }}
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Selected Work -->
+    <section class="fade-in-section mt-24 space-y-8" data-delay="100">
+      <h2 class="font-display text-sm font-medium tracking-wide text-muted-foreground uppercase">
+        Karya Pilihan
+      </h2>
+      <div class="space-y-0 divide-y divide-border">
+        {% for work in site.data.content.selectedWork %}
+        <a href="{{ work.href }}" class="group flex items-center justify-between py-5 transition-colors hover:text-muted-foreground">
+          <div class="space-y-1">
+            <h3 class="font-display font-medium">{{ work.title }}</h3>
+            <p class="text-sm text-muted-foreground">
+              {{ work.category }} — {{ work.year }}
+            </p>
+          </div>
+          {% include social-icons.html icon="ArrowUpRight" class="h-5 w-5 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" %}
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="fade-in-section mt-24 space-y-8" data-delay="100">
+      <h2 class="font-display text-sm font-medium tracking-wide text-muted-foreground uppercase">
+        Kontak
+      </h2>
+      <p class="leading-relaxed text-foreground">
+        Tertarik berkolaborasi atau sekadar menyapa? Kirim email ke 
+        <a href="mailto:hello@aipnurhayadi.com" class="inline-flex items-center gap-1 font-medium underline underline-offset-4 transition-colors hover:text-muted-foreground">
+          hello@aipnurhayadi.com
+          {% include social-icons.html icon="Mail" class="h-4 w-4" %}
+        </a>
+      </p>
+      <div class="flex flex-wrap gap-4">
+        {% for link in site.data.content.socialLinks %}
+        <a href="{{ link.href }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground">
+          {{ link.name }}
+          {% include social-icons.html icon="ArrowUpRight" class="h-3.5 w-3.5" %}
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="fade-in-section mt-32 flex flex-col items-start justify-between gap-4 border-t border-border pt-8 sm:flex-row sm:items-center" data-delay="100">
+      <p class="text-sm text-muted-foreground">
+        © <script>document.write(new Date().getFullYear())</script> Aip Nurhayadi. Dibuat dengan sederhana.
+      </p>
+      <p class="text-sm text-muted-foreground">
+        Jakarta, Indonesia
+      </p>
+    </footer>
+  </div>
+</main>

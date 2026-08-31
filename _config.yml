@@ -1,0 +1,10 @@
+title: Aip Nurhayadi — Personal Website
+description: Minimal personal website of Aip Nurhayadi. Design, development, and thoughtful digital work.
+url: "https://aipnur.id"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
