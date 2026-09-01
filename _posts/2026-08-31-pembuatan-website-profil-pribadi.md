@@ -3,6 +3,14 @@ layout: post
 title: "Pembangunan Website Profil Pribadi sebagai Portofolio Digital"
 category: "Artikel"
 year: "2026"
+client: "Proyek Pribadi"
+role: "Desain & Pengembangan"
+summary: "Pembuatan ruang digital interaktif sebagai portofolio profesional untuk menampilkan karya, profil, dan perkembangan kemampuan secara terstruktur."
+stack:
+  - Jekyll
+  - Tailwind CSS
+  - HTML
+  - Liquid
 ---
 
 Website pribadi menjadi salah satu media yang dapat digunakan untuk memperkenalkan profil, kemampuan, pengalaman, serta berbagai karya secara lebih terstruktur. Di tengah perkembangan teknologi dan semakin pentingnya kehadiran digital, memiliki web profil pribadi dapat menjadi cara yang efektif untuk menyajikan informasi dalam satu tempat yang mudah diakses.
