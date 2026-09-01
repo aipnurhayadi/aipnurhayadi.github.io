@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /_site/
+Disallow: /assets/
+
+Sitemap: https://aipnur.id/sitemap.xml
